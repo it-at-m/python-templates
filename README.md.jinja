@@ -17,7 +17,14 @@ What to adjust:
 # {{ project_name }}
 
 [![Made with love by it@M][made-with-love-shield]][itm-opensource]
-[![Copier][copier-shield]][copier-repo]
+[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-black.json)](https://github.com/copier-org/copier)
+[![Python][python-shield]][python-org]
+[![uv][uv-shield]][uv-repo]
+[![Docker][docker-shield]][docker-repo]
+[![License][license-shield]][license-link]
+{% if backend %}[![FastAPI][fastapi-shield]][fastapi-repo]{% endif %}
+{% if frontend %}[![Vue 3][vue-shield]][vue-repo]{% endif %}
+{% if frontend %}[![Vite][vite-shield]][vite-repo]{% endif %}
 
 <!-- feel free to add more shields, style 'for-the-badge' -> see https://shields.io/badges -->
 
@@ -70,8 +77,20 @@ it@M - opensource@muenchen.de
 
 <!-- project shields / links -->
 
-[made-with-love-shield]: https://img.shields.io/badge/made%20with%20%E2%9D%A4%20by-it%40M-yellow
+[made-with-love-shield]: https://img.shields.io/badge/made_with_%E2%9D%A4%20by-it%40M-yellow
 [itm-opensource]: https://opensource.muenchen.de/
-[copier-shield]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-black.json
-[copier-repo]: https://github.com/copier-org/copier
+[python-shield]: https://img.shields.io/badge/python-3.14.4%2B-3776AB?logo=python&logoColor=white
+[python-org]: https://www.python.org/
+[uv-shield]: https://img.shields.io/badge/uv-tool-111111?logo=astral&logoColor=white
+[uv-repo]: https://docs.astral.sh/uv/
+[docker-shield]: https://img.shields.io/badge/docker-supported-2496ED?logo=docker&logoColor=white
+[docker-repo]: https://www.docker.com/
+[license-shield]: https://img.shields.io/badge/license-MIT-007EC6
+[license-link]: LICENSE
+[fastapi-shield]: https://img.shields.io/badge/fastapi-api-009688?logo=fastapi&logoColor=white
+[fastapi-repo]: https://fastapi.tiangolo.com/
+[vue-shield]: https://img.shields.io/badge/vue-3-4FC08D?logo=vuedotjs&logoColor=white
+[vue-repo]: https://vuejs.org/
+[vite-shield]: https://img.shields.io/badge/vite-build-646CFF?logo=vite&logoColor=white
+[vite-repo]: https://vite.dev/
 [docs-website]: https://it-at-m.github.io/{{ project_name }}/
