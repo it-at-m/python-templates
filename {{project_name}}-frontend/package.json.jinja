@@ -1,0 +1,24 @@
+{
+  "name": "{{ project_name }}-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --build --noCheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --build --noEmit"
+  },
+  "dependencies": {
+    "vue": "3.5.27"
+  },
+  "devDependencies": {
+    "@tsconfig/node-lts": "22.0.4",
+    "@types/node": "22.19.17",
+    "@vitejs/plugin-vue": "6.0.5",
+    "@vue/tsconfig": "0.8.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.2",
+    "vue-tsc": "3.1.8"
+  }
+}

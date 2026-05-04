@@ -1,0 +1,77 @@
+## Customize this file after creating the new REPO and remove this lines.
+
+What to adjust:
+
+- Add a long desciption.
+- Add links for your final repo to report a bug or request a feature.
+- Append list of used technologies.
+- If you have, add a roadmap or remove this section.
+- Fill up the section for set up and documentation.
+- Start in this file only with documentation and link to the docs folder.
+- Add more project shields. Use [shields.io](https://shields.io/) with style `for-the-badge`.
+
+## ------- end to remove -------
+
+<!-- add Project Logo, if existing -->
+
+# {{ project_name }}
+
+[![Made with love by it@M][made-with-love-shield]][itm-opensource]
+[![Copier][copier-shield]][copier-repo]
+
+<!-- feel free to add more shields, style 'for-the-badge' -> see https://shields.io/badges -->
+
+{{ short_description }}
+
+### Built With
+
+The documentation project is built with technologies we use in our projects:
+
+- Python
+- uv
+- ruff
+- ty
+- copier
+- vitepress
+- pre-commit
+
+## Roadmap
+
+_if you have a ROADMAP for your project add this here_
+
+See the [open issues](#) for a full list of proposed features (and known issues).
+
+## Set up
+
+_how can i start and fly this project_
+
+Copier uses Jinja extensions in this template, so install Copier together with the required packages in the same uv tool environment before rendering the template:
+
+```bash
+uv tool install --with jinja2-time --with jinja2-slug --with jinja-markdown copier
+```
+
+## Documentation
+
+See the [docs][docs-website] for more details.
+You can also check the [docs folder](docs) for the source of the documentation.
+
+## Contributing
+
+See the [CONTRIBUTING](CONTRIBUTING.md) file for more details.
+
+## License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) file for more information.
+
+## Contact
+
+it@M - opensource@muenchen.de
+
+<!-- project shields / links -->
+
+[made-with-love-shield]: https://img.shields.io/badge/made%20with%20%E2%9D%A4%20by-it%40M-yellow
+[itm-opensource]: https://opensource.muenchen.de/
+[copier-shield]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-black.json
+[copier-repo]: https://github.com/copier-org/copier
+[docs-website]: https://it-at-m.github.io/{{ project_name }}/

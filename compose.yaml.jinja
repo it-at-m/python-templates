@@ -1,0 +1,27 @@
+services:
+  {% if backend %}
+  backend:
+    build:
+      context: ./{{ project_name }}-backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    ports:
+      - "8080:8080"
+  {% endif %}
+  {% if frontend %}
+  frontend:
+    build:
+      context: ./{{ project_name }}-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+  {% endif %}
+  {% if job %}
+  job:
+    build:
+      context: ./{{ project_name }}-job
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+  {% endif %}
