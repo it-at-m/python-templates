@@ -2,7 +2,7 @@ services:
   {% if backend %}
   backend:
     build:
-      context: ./{{ project_name }}-backend
+      context: ./{{ module_name }}-backend
       dockerfile: Dockerfile
     env_file:
       - ./.env
@@ -12,7 +12,7 @@ services:
   {% if frontend %}
   frontend:
     build:
-      context: ./{{ project_name }}-frontend
+      context: ./{{ module_name }}-frontend
       dockerfile: Dockerfile
     ports:
       - "8081:8080"
@@ -20,7 +20,7 @@ services:
   {% if job %}
   job:
     build:
-      context: ./{{ project_name }}-job
+      context: ./{{ module_name }}-job
       dockerfile: Dockerfile
     env_file:
       - ./.env

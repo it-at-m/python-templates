@@ -2,7 +2,7 @@
 
 What to adjust:
 
-- Add a long desciption.
+- Add a long description.
 - Add links for your final repo to report a bug or request a feature.
 - Append list of used technologies.
 - If you have, add a roadmap or remove this section.
@@ -52,11 +52,18 @@ See the [open issues](#) for a full list of proposed features (and known issues)
 
 _how can i start and fly this project_
 
-Copier uses Jinja extensions in this template, so install Copier together with the required packages in the same uv tool environment before rendering the template:
-
 ```bash
-uv tool install --with jinja2-time --with jinja2-slug --with jinja-markdown copier
+# Install dependencies
+uv sync
+
+# Configure environment variables (copy and edit the example)
+cp .env.example .env
+
+# Run the project
+uv run python main.py
 ```
+
+> For template maintenance details (updating the Copier template, Jinja extensions, etc.) see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Documentation
 
@@ -93,4 +100,4 @@ it@M - opensource@muenchen.de
 [vue-repo]: https://vuejs.org/
 [vite-shield]: https://img.shields.io/badge/vite-build-646CFF?logo=vite&logoColor=white
 [vite-repo]: https://vite.dev/
-[docs-website]: https://it-at-m.github.io/{{ project_name }}/
+[docs-website]: https://{{ repository_owner }}.github.io/{{ project_name }}/

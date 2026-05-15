@@ -24,8 +24,9 @@ def test_run_uses_example_url(monkeypatch) -> None:
             captured["url"] = url
             return DummyResponse()
 
-    monkeypatch.setattr(main.httpx, "AsyncClient", lambda timeout: DummyClient())
+    monkeypatch.setattr(main.httpx, "AsyncClient", lambda *args, **kwargs: DummyClient())
 
     asyncio.run(main.run())
 
+    assert "url" in captured
     assert captured["url"] == main.EXAMPLE_URL

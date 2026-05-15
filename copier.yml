@@ -12,12 +12,12 @@ _exclude:
   - ".git"
   - ".DS_Store"
   - ".svn"
-  - "{% if not frontend %}{{ project_name }}-frontend{% endif %}"
-  - "{% if not frontend %}{{ project_name }}-frontend/**{% endif %}"
-  - "{% if not backend %}{{ project_name }}-backend{% endif %}"
-  - "{% if not backend %}{{ project_name }}-backend/**{% endif %}"
-  - "{% if not job %}{{ project_name }}-job{% endif %}"
-  - "{% if not job %}{{ project_name }}-job/**{% endif %}"
+  - "{% if not frontend %}{{ module_name }}-frontend{% endif %}"
+  - "{% if not frontend %}{{ module_name }}-frontend/**{% endif %}"
+  - "{% if not backend %}{{ module_name }}-backend{% endif %}"
+  - "{% if not backend %}{{ module_name }}-backend/**{% endif %}"
+  - "{% if not job %}{{ module_name }}-job{% endif %}"
+  - "{% if not job %}{{ module_name }}-job/**{% endif %}"
 
 project_name:
   type: str
@@ -32,26 +32,6 @@ repository_owner:
   type: str
   default: it-at-m
   help: What GitHub owner or organization should be used for repository URLs?
-
-backend_ubi10_base_image:
-  type: str
-  default: registry.access.redhat.com/ubi10/ubi-minimal:latest
-  choices:
-    UBI 10 regular: registry.access.redhat.com/ubi10/ubi:latest
-    UBI 10 minimal: registry.access.redhat.com/ubi10/ubi-minimal:latest
-    UBI 10 micro: registry.access.redhat.com/ubi10/ubi-micro:latest
-  when: "{{ backend }}"
-  help: Which UBI 10 base image should be used for the backend container?
-
-job_ubi10_base_image:
-  type: str
-  default: registry.access.redhat.com/ubi10/ubi-minimal:latest
-  choices:
-    UBI 10 regular: registry.access.redhat.com/ubi10/ubi:latest
-    UBI 10 minimal: registry.access.redhat.com/ubi10/ubi-minimal:latest
-    UBI 10 micro: registry.access.redhat.com/ubi10/ubi-micro:latest
-  when: "{{ job }}"
-  help: Which UBI 10 base image should be used for the job container?
 
 short_description:
   type: str
@@ -91,3 +71,23 @@ frontend:
   type: bool
   default: true
   help: Create a Vue frontend?
+
+backend_ubi10_base_image:
+  type: str
+  default: registry.access.redhat.com/ubi10/ubi-minimal:10.1-1775622738
+  choices:
+    UBI 10 regular: registry.access.redhat.com/ubi10/ubi:10.1-1775622738
+    UBI 10 minimal: registry.access.redhat.com/ubi10/ubi-minimal:10.1-1775622738
+    UBI 10 micro: registry.access.redhat.com/ubi10/ubi-micro:10.1-1775622738
+  when: "{{ backend }}"
+  help: Which UBI 10 base image should be used for the backend container?
+
+job_ubi10_base_image:
+  type: str
+  default: registry.access.redhat.com/ubi10/ubi-minimal:10.1-1775622738
+  choices:
+    UBI 10 regular: registry.access.redhat.com/ubi10/ubi:10.1-1775622738
+    UBI 10 minimal: registry.access.redhat.com/ubi10/ubi-minimal:10.1-1775622738
+    UBI 10 micro: registry.access.redhat.com/ubi10/ubi-micro:10.1-1775622738
+  when: "{{ job }}"
+  help: Which UBI 10 base image should be used for the job container?
