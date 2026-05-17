@@ -54,7 +54,7 @@ jobs:
                   sbom: true
                   provenance: true
                   tags: |
-                      ghcr.io/{% raw %}${{ steps.vars.outputs.repo_lowercase }}{% endraw %}/{{ project_name }}-frontend:{% raw %}${{ steps.vars.outputs.version }}{% endraw %}
-                      ghcr.io/{% raw %}${{ steps.vars.outputs.repo_lowercase }}{% endraw %}/{{ project_name }}-frontend:latest
+                      ghcr.io/{% raw %}${{ steps.vars.outputs.repo_lowercase }}{% endraw %}/{{ module_name }}-frontend:{% raw %}${{ steps.vars.outputs.version }}{% endraw %}
+                      ghcr.io/{% raw %}${{ steps.vars.outputs.repo_lowercase }}{% endraw %}/{{ module_name }}-frontend:latest
                   cache-from: type=gha
                   cache-to: type=gha,mode=max

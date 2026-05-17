@@ -11,12 +11,12 @@ WORKDIR /app/{{ module_name }}
 COPY pyproject.toml uv.lock ./
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --no-dev --no-install-project
+    uv sync --frozen --no-dev --no-install-project
 
 COPY . /app/{{ module_name }}/
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --no-dev
+    uv sync --frozen --no-dev
 
 ARG IMAGE_CREATED="unknown"
 ARG IMAGE_REVISION="unknown"
